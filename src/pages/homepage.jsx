@@ -77,10 +77,10 @@ const Homepage=()=>{
     let filteredSchemes = schemes;
 
     if (isChecked) {
-        filteredSchemes = schemes.filter(scheme => scheme.age >= minAge);
+        filteredSchemes = filteredSchemes.filter(scheme => scheme.age >= minAge);
     }
     if (IncomeCheck) {
-        filteredSchemes = schemes.filter(scheme => scheme.min_income <= minIncome);
+        filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income <= minIncome);
     }
     if (selectedCaste === '1') {
             filteredSchemes = filteredSchemes.filter(scheme => scheme.caste === "general");
