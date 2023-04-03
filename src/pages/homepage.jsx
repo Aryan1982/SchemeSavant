@@ -63,13 +63,10 @@ const schemes=[
         caste:"sc"
     }
 ]
-const initialState = {
-    schemes: schemes,
-    isChecked: false,
-  };
+
 const Homepage=()=>{
-    const [minAge, setMinAge] = useState(40);
-    const [minIncome, setMinIncome] = useState(10000);
+    // const [minAge, setMinAge] = useState(40);
+    // const [minIncome, setMinIncome] = useState(10000);
     const [isChecked, setIsChecked] = useState(false);
     const [IncomeCheck, setIncomeCheck] = useState(false);
     const [selectedCaste, setSelectedCaste] = useState('');
@@ -77,10 +74,10 @@ const Homepage=()=>{
     let filteredSchemes = schemes;
 
     if (isChecked) {
-        filteredSchemes = filteredSchemes.filter(scheme => scheme.age >= minAge);
+        filteredSchemes = filteredSchemes.filter(scheme => scheme.age >= 40);
     }
     if (IncomeCheck) {
-        filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income <= minIncome);
+        filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income >= 10000);
     }
     if (selectedCaste === '1') {
             filteredSchemes = filteredSchemes.filter(scheme => scheme.caste === "general");
