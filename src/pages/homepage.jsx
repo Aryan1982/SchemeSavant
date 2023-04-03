@@ -18,7 +18,7 @@ const schemes=[
         name:"SecondScheme",
         content:"bla bla",
         age:40,
-        min_income:10000,
+        min_income:50000,
         img:"https://tractorguru.in/blog/wp-content/uploads/2021/08/PM-Kisan-SCHEME.jpg",
         caste:"general"
     },
@@ -83,16 +83,14 @@ const Homepage=()=>{
         filteredSchemes = schemes.filter(scheme => scheme.min_income <= minIncome);
     }
     if (selectedCaste === '1') {
-            filteredSchemes = schemes.filter(scheme => scheme.caste === "general");
+            filteredSchemes = filteredSchemes.filter(scheme => scheme.caste === "general");
             // alert("done")
           } else if (selectedCaste === '2') {
-            filteredSchemes = schemes.filter(scheme => scheme.caste === "obc");
+            filteredSchemes = filteredSchemes.filter(scheme => scheme.caste === "obc");
           } else if (selectedCaste === '3') {
-            filteredSchemes = schemes.filter(scheme => scheme.caste === "sc");
+            filteredSchemes = filteredSchemes.filter(scheme => scheme.caste === "sc");
           } else if (selectedCaste === '4') {
-            filteredSchemes = schemes.filter(scheme => scheme.caste === "st");
-          } else {
-            filteredSchemes = schemes;
+            filteredSchemes = filteredSchemes.filter(scheme => scheme.caste === "st");
           }
     const handleCheckboxChange = (event) => {
       setIsChecked(event.target.checked);
