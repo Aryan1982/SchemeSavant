@@ -65,20 +65,31 @@ const schemes=[
 ]
 
 const Homepage=()=>{
-    // const [minAge, setMinAge] = useState(40);
-    // const [minIncome, setMinIncome] = useState(10000);
-    const [isChecked, setIsChecked] = useState(false);
-    const [IncomeCheck, setIncomeCheck] = useState(false);
+    const [selectedIncome, setSelectedIncome] = useState('');
     const [selectedCaste, setSelectedCaste] = useState('');
-
+    const [selectedAge,setSelectedAge]=useState()
     let filteredSchemes = schemes;
 
-    if (isChecked) {
-        filteredSchemes = filteredSchemes.filter(scheme => scheme.age >= 40);
+    if (selectedIncome === '1') {
+      filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income >= 10000);
+      // alert("done")
+    } else if (selectedIncome === '2') {
+      filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income >= 50000);
+    } else if (selectedIncome === '3') {
+      filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income >= 100000);
+    } else if (selectedIncome === '4') {
+      filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income >= 100000);
     }
-    if (IncomeCheck) {
-        filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income >= 10000);
-    }
+
+    if (selectedAge === '1') {
+      filteredSchemes = filteredSchemes.filter(scheme => scheme.age < 40 );
+      // alert("done")
+    } else if (selectedAge === '2') {
+      filteredSchemes = filteredSchemes.filter(scheme => scheme.age < 60);
+    } else if (selectedAge === '3') {
+      filteredSchemes = filteredSchemes.filter(scheme => scheme.age < 100);
+    } 
+
     if (selectedCaste === '1') {
             filteredSchemes = filteredSchemes.filter(scheme => scheme.caste === "general");
             // alert("done")
@@ -89,12 +100,13 @@ const Homepage=()=>{
           } else if (selectedCaste === '4') {
             filteredSchemes = filteredSchemes.filter(scheme => scheme.caste === "st");
           }
-    const handleCheckboxChange = (event) => {
-      setIsChecked(event.target.checked);
-    };
-    const Incomecheck = (event) => {
-        setIncomeCheck(event.target.checked);
-      };
+
+      const handleAgeChange = (event)=>{
+        setSelectedAge(event.target.value);
+      }
+      const handleIncomeChange = (event)=>{
+        setSelectedIncome(event.target.value);
+      }
       const handleCasteChange = (event) => {
         setSelectedCaste(event.target.value);
         // alert(selectedCaste);
@@ -104,21 +116,36 @@ const Homepage=()=>{
         <div className="d-flex flex-column justify-content-center">
 
            <Container className="m-auto">
-           <Form.Check 
+           {/* <Form.Check 
             type="checkbox"
             id={`default-checkbox`}
             label={"age>40"}
             // checked={isChecked}
             onClick={handleCheckboxChange}
-          />
-          <Form.Check 
+          /> */}
+          <Form.Select aria-label="select caste" value={selectedAge} onChange={handleAgeChange} className="mt-2">
+            <option>Select age</option>
+            <option value="1">18-40</option>
+            <option value="2">40-60</option>
+            <option value="3">more than 60</option>
+            </Form.Select>
+
+            <Form.Select aria-label="select caste" value={selectedIncome} onChange={handleIncomeChange} className="mt-2">
+            <option>Select Income</option>
+            <option value="1">0-10000</option>
+            <option value="2">10000-50000</option>
+            <option value="3">50000-100000</option>
+            <option value="4">more than 100000</option>
+            {/* <option value="5">Other</option> */}
+            </Form.Select>
+          {/* <Form.Check 
             type="checkbox"
             id={`default-checkbox`}
             label={"income less than 10000 per anum"}
             // checked={isChecked}
             onClick={Incomecheck}
-          />
-          <Form.Select aria-label="select caste" value={selectedCaste} onChange={handleCasteChange}>
+          /> */}
+          <Form.Select aria-label="select caste" value={selectedCaste} onChange={handleCasteChange} className="mt-2">
             <option>Select Caste</option>
             <option value="1">General</option>
             <option value="2">OBC</option>
