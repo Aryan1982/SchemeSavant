@@ -140,7 +140,7 @@ const Homepage=()=>{
                         <p>Age more than {scheme.age}</p>
                         <p>for caste {scheme.caste.toUpperCase()}</p>
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="primary" onClick={()=>alert("ruko jara sabar rakho, website develop ho rahi")}>Go somewhere</Button>
                     </Card.Body>
                     </Card>
                     
