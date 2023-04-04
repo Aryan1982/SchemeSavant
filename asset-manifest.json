@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/agrischemes/static/css/main.44f8b8b5.css",
-    "main.js": "/agrischemes/static/js/main.aea35838.js",
+    "main.js": "/agrischemes/static/js/main.23142dd2.js",
     "static/js/787.276dece6.chunk.js": "/agrischemes/static/js/787.276dece6.chunk.js",
     "index.html": "/agrischemes/index.html",
     "main.44f8b8b5.css.map": "/agrischemes/static/css/main.44f8b8b5.css.map",
-    "main.aea35838.js.map": "/agrischemes/static/js/main.aea35838.js.map",
+    "main.23142dd2.js.map": "/agrischemes/static/js/main.23142dd2.js.map",
     "787.276dece6.chunk.js.map": "/agrischemes/static/js/787.276dece6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.44f8b8b5.css",
-    "static/js/main.aea35838.js"
+    "static/js/main.23142dd2.js"
   ]
 }
