@@ -154,7 +154,7 @@ const Homepage=()=>{
             {/* <option value="5">Other</option> */}
             </Form.Select>
       <Row className="d-flex flex-column align-items-center" >
-        
+        {filteredSchemes.length > 0 ? null : <h1 className="text-center mt-3">sorry dont have any schemes for you</h1>}
         {filteredSchemes.map((scheme,i)=>{
                 return(
                     <Card style={{ width: '18rem' }} className="mt-3">
