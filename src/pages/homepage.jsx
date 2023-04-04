@@ -115,68 +115,7 @@ const Homepage=()=>{
     return(
         <div className="d-flex flex-column justify-content-center">
 
-           <Container className="m-auto">
-           {/* <Form.Check 
-            type="checkbox"
-            id={`default-checkbox`}
-            label={"age>40"}
-            // checked={isChecked}
-            onClick={handleCheckboxChange}
-          /> */}
-          <Form.Select aria-label="select caste" value={selectedAge} onChange={handleAgeChange} className="mt-2">
-            <option>Select age</option>
-            <option value="1">18-40</option>
-            <option value="2">40-60</option>
-            <option value="3">more than 60</option>
-            </Form.Select>
-
-            <Form.Select aria-label="select caste" value={selectedIncome} onChange={handleIncomeChange} className="mt-2">
-            <option>Select Income</option>
-            <option value="1">0-10000</option>
-            <option value="2">10000-50000</option>
-            <option value="3">50000-100000</option>
-            <option value="4">more than 100000</option>
-            {/* <option value="5">Other</option> */}
-            </Form.Select>
-          {/* <Form.Check 
-            type="checkbox"
-            id={`default-checkbox`}
-            label={"income less than 10000 per anum"}
-            // checked={isChecked}
-            onClick={Incomecheck}
-          /> */}
-          <Form.Select aria-label="select caste" value={selectedCaste} onChange={handleCasteChange} className="mt-2">
-            <option>Select Caste</option>
-            <option value="1">General</option>
-            <option value="2">OBC</option>
-            <option value="3">SC</option>
-            <option value="4">ST</option>
-            {/* <option value="5">Other</option> */}
-            </Form.Select>
-      <Row className="d-flex flex-column align-items-center" >
-        
-        {filteredSchemes.map((scheme,i)=>{
-                return(
-                    <Card style={{ width: '18rem' }} className="mt-3">
-                    <Card.Img variant="top" src={scheme.img} />
-                    <Card.Body>
-                        <Card.Title>{scheme.name}</Card.Title>
-                        <Card.Text>
-                        {scheme.content}
-                        <p>Income less than {scheme.min_income}</p>
-                        <p>Age more than {scheme.age}</p>
-                        <p>for caste {scheme.caste.toUpperCase()}</p>
-                        </Card.Text>
-                        <Button variant="primary" onClick={()=>alert("ruko jara sabar rakho, website develop ho rahi")}>Go somewhere</Button>
-                    </Card.Body>
-                    </Card>
-                    
-                )
-            })}
-       
-        
-      </Row>
-      </Container>
+           
         </div>
     )
 }
