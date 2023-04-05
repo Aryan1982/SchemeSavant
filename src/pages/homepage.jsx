@@ -70,6 +70,7 @@ const Homepage=()=>{
     const [selectedAge,setSelectedAge]=useState()
     let filteredSchemes = schemes;
 
+    
     if (selectedIncome === '1') {
       filteredSchemes = filteredSchemes.filter(scheme => scheme.min_income >= 10000);
       // alert("done")
