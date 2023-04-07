@@ -7,14 +7,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import SchemesDo from "../schemesdo.jfif"
 const FormPage=()=>{
     const [formcount,setFormcount]=useState(0);
-    const [selectedAge,setSelectedAge]=useState();
-    const [selectedGender,setSelectedGender]=useState();
-    const [state,setState]= useState('');
-    const [area,setArea]= useState('');
-    const [selectedIncome, setSelectedIncome] = useState();
-    const [caste, setCaste] = useState('');
-    const [isStudent,setIsStudent] = useState();
-    const [isDissabled,setIsDissabled] = useState();
+    const [selectedAge,setSelectedAge]=useState("0");
+    const [selectedGender,setSelectedGender]=useState("0");
+    const [state,setState]= useState("0");
+    const [area,setArea]= useState("0");
+    const [selectedIncome, setSelectedIncome] = useState("0");
+    const [caste, setCaste] = useState("0");
+    const [isStudent,setIsStudent] = useState("0");
+    const [isDissabled,setIsDissabled] = useState("0");
 
     const handleAgeChange = (event)=>{
       setSelectedAge(event.target.value);
@@ -27,8 +27,7 @@ const FormPage=()=>{
 
     const Goforward=(event)=>{
       event.preventDefault()
-
-      if(selectedAge && selectedGender !==0){
+      if(selectedAge !=="0" && selectedGender !=="0"){
         setFormcount(formcount+1);
       }
       else{
@@ -95,7 +94,7 @@ const FormPage=()=>{
         <div>
         {/* <input className="submitbtn" type="submit" value="Login"/><br/><br/> */}
         <button onClick={()=>{setFormcount(formcount-1)}}>BACK</button>
-        <button onClick={(e)=>{e.preventDefault() ;if(state && area){Goforward(e)}else{toast("Please fill all the fields")}}}>NEXT</button>
+        <button onClick={(e)=>{e.preventDefault() ;if(state !=="0" && area !=="0"){Goforward(e)}else{toast("Please fill all the fields")}}}>NEXT</button>
         </div>
         
       </form>:null}
@@ -106,7 +105,7 @@ const FormPage=()=>{
           value={caste} 
           onChange={(e)=>setCaste(e.target.value)} 
           >
-          <option>Select your caste</option>
+          <option value="0">Select your caste</option>
           <option value="1">General</option>
           <option value="2">Other Backward Class (OBC)</option>
           <option value="3">Particularly Vulnerable Tribal Group (PVTG)</option>
@@ -116,7 +115,7 @@ const FormPage=()=>{
 
           <p>Please select your yearly income</p>
           <Form.Select aria-label="select caste" value={selectedIncome} onChange={(e)=>setSelectedIncome(e.target.value)}>
-          <option>Select your income</option>
+          <option value="0">Select your income</option>
           <option value="1">upto 50000</option>
           <option value="2">upto 100000</option>
           <option value="3">more than 100000</option> 
@@ -125,7 +124,7 @@ const FormPage=()=>{
         <div>
         {/* <input className="submitbtn" type="submit" value="Login"/><br/><br/> */}
         <button onClick={()=>setFormcount(formcount-1)}>BACK</button>
-        <button onClick={(e)=>{e.preventDefault();if(caste && selectedIncome){Goforward(e)}else{toast("Please fill all the fields")}}}>NEXT</button>
+        <button onClick={(e)=>{e.preventDefault();if(caste !=="0" && selectedIncome !=="0"){Goforward(e)}else{toast("Please fill all the fields")}}}>NEXT</button>
         </div>
         
       </form>:null}
@@ -136,7 +135,7 @@ const FormPage=()=>{
           value={isStudent} 
           onChange={(e)=>setIsStudent(e.target.value)} 
           >
-          <option>Select</option>
+          <option value="0">Select</option>
           <option value="1">Yes</option>
           <option value="2">NO</option>
                
@@ -144,7 +143,7 @@ const FormPage=()=>{
 
           <p>Are you dissabled</p>
           <Form.Select aria-label="select caste" value={isDissabled} onChange={(e)=>setIsDissabled(e.target.value)}>
-          <option>Select</option>
+          <option value="0">Select</option>
           <option value="1">Yes</option>
           <option value="2">No</option>
           {/* <option value="3">more than 60</option> */}
@@ -153,7 +152,7 @@ const FormPage=()=>{
         <div>
         {/* <input className="submitbtn" type="submit" value="Login"/><br/><br/> */}
         <button onClick={()=>setFormcount(formcount-1)}>BACK</button>
-        <button onClick={(e)=>{e.preventDefault();if(isStudent && isDissabled){Goforward(e)}else{toast("Please fill all the fields")}}}>SUBMIT</button>
+        <button onClick={(e)=>{e.preventDefault();if(isStudent !=="0" && isDissabled !=="0"){Goforward(e)}else{toast("Please fill all the fields")}}}>SUBMIT</button>
         </div>
         
       </form>:null}
