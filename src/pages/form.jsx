@@ -3,12 +3,12 @@ import React,{ useState } from 'react';
 import './form.css';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import SchemesDo from "../schemesdo.jfif"
 const FormPage=()=>{
     const [formcount,setFormcount]=useState(0);
     const [selectedAge,setSelectedAge]=useState();
     const [selectedGender,setSelectedGender]=useState();
-    const [counter,setCounter] = useState(0);
     const [state,setState]= useState('');
     const [area,setArea]= useState('');
     const [selectedIncome, setSelectedIncome] = useState();
@@ -28,7 +28,7 @@ const FormPage=()=>{
     const Goforward=(event)=>{
       event.preventDefault()
 
-      if(selectedAge && selectedGender !=0){
+      if(selectedAge && selectedGender !==0){
         setFormcount(formcount+1);
       }
       else{
@@ -94,8 +94,8 @@ const FormPage=()=>{
         <br/><br/>
         <div>
         {/* <input className="submitbtn" type="submit" value="Login"/><br/><br/> */}
-        <button onClick={()=>setFormcount(formcount-1)}>BACK</button>
-        <button onClick={Goforward}>NEXT</button>
+        <button onClick={()=>{setFormcount(formcount-1)}}>BACK</button>
+        <button onClick={(e)=>{e.preventDefault() ;if(state && area){Goforward(e)}else{toast("Please fill all the fields")}}}>NEXT</button>
         </div>
         
       </form>:null}
@@ -125,7 +125,7 @@ const FormPage=()=>{
         <div>
         {/* <input className="submitbtn" type="submit" value="Login"/><br/><br/> */}
         <button onClick={()=>setFormcount(formcount-1)}>BACK</button>
-        <button onClick={Goforward}>NEXT</button>
+        <button onClick={(e)=>{e.preventDefault();if(caste && selectedIncome){Goforward(e)}else{toast("Please fill all the fields")}}}>NEXT</button>
         </div>
         
       </form>:null}
@@ -153,11 +153,12 @@ const FormPage=()=>{
         <div>
         {/* <input className="submitbtn" type="submit" value="Login"/><br/><br/> */}
         <button onClick={()=>setFormcount(formcount-1)}>BACK</button>
-        <button onClick={Goforward}>SUBMIT</button>
+        <button onClick={(e)=>{e.preventDefault();if(isStudent && isDissabled){Goforward(e)}else{toast("Please fill all the fields")}}}>SUBMIT</button>
         </div>
         
       </form>:null}
 
+      {formcount===4? <img src={SchemesDo} alt="schemes do"/>: null}
       </div>
       </div>
     )
