@@ -19,7 +19,7 @@ const FormPage=()=>{
     return(
         <div className="formpage">
           <ProgressBar animated now={formcount*50}  style={{width:"200px",textAlign:"center"}}/>
-          <p>help up find best schemes for you</p>
+          <p>help us find best schemes for you</p>
         <div className="form">
           
         {/* <h1 style={{textAlign:'center', marginTop:"0px", marginBottom:"30px"}}>LOGIN</h1> */}
