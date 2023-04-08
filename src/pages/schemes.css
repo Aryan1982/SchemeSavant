@@ -19,6 +19,7 @@
 	box-shadow: 0 15px 30px 5px rgb(0, 0, 0, 0.3);
 	font-family: poppins;
 	transition: 0.15s;
+	padding: 8px;
 }
 .sector:hover{
 	cursor: pointer;
