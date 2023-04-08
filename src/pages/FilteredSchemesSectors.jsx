@@ -46,7 +46,7 @@ const FilteredSchemesSectors=({formcount})=>{
       },
 ]
     return(
-        <div>
+        <div className='container'>
         {selectedSector?
             <div className="sectordiv">
               {filteredSchemes.length>1 ? filteredSchemes.map((scheme, index) => (

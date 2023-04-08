@@ -1,3 +1,6 @@
+.container{
+	padding:8px;
+}
 .sectordiv{
 	height: 90vh;
 	overflow: scroll;
