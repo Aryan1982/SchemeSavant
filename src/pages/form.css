@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .form{
 	padding: 40px;
-	background-color: #e7e7e7;
+	background-color: #C0EEF2;
 	border-radius: 20px;
 	box-shadow: 0 15px 30px 5px rgb(0, 0, 0, 0.3);
 }
@@ -12,7 +11,6 @@ form{
 	align-items: center;
 	font-family: Poppins;
 	min-width: 250px;
-	
 
 }
 .form p{
@@ -37,6 +35,7 @@ form{
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	background-color: #E9F8F9;
 }
 button{
 	background-color: #212121;

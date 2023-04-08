@@ -1,0 +1,35 @@
+.sectordiv{
+	height: 90vh;
+	overflow: scroll;
+  white-space: nowrap;
+  
+}
+.sectordiv::-webkit-scrollbar {
+  display: none;
+}
+
+.sector{
+	display: flex;
+	align-items: center;
+	background: #181823;
+	border-radius: 7px;
+	color: white;
+	padding: 5px;
+	margin-bottom: 20px;
+	box-shadow: 0 15px 30px 5px rgb(0, 0, 0, 0.3);
+	font-family: poppins;
+	transition: 0.15s;
+}
+.sector:hover{
+	cursor: pointer;
+	scale: 1.05;
+	transition: 0.15s;
+}
+.sector h3{
+	font-size: 1.1rem;
+	margin-left: 7px;
+	margin-bottom: 0px;
+}
+.sectorimg{
+	height: 50px;
+}
