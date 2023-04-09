@@ -4,8 +4,9 @@
 .sectordiv{
 	height: 90vh;
 	overflow: scroll;
-  white-space: nowrap;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .sectordiv::-webkit-scrollbar {
   display: none;

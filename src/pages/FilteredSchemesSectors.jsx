@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import SchemesDo from "../schemesdo.jfif"
 
 const FilteredSchemesSectors=({formcount,selectedGender,state,area,selectedIncome,caste,isStudent,isDissabled})=>{
-    const [selectedSector,setSelectedSector]=useState();
+  const [selectedSector,setSelectedSector]=useState();
   const [filteredSchemes, setFilteredSchemes] = useState([]);
   const [displayedSchemes, setDisplayedSchemes] = useState([]);
   const [availableSectors, setAvailableSectors] = useState([]);
@@ -16,7 +16,6 @@ const FilteredSchemesSectors=({formcount,selectedGender,state,area,selectedIncom
 
   const handleClick=(sector)=>{
     setSelectedSector(sector.sector);
-    formcount++;
   }
 
   const filterSchemes = useCallback(() =>{
@@ -68,16 +67,14 @@ const FilteredSchemesSectors=({formcount,selectedGender,state,area,selectedIncom
         <div className='container'>
         {selectedSector?
             <div className="sectordiv">
-              {filteredSchemes.length>1 ? filteredSchemes.map((scheme, index) => (
+              {availableSectors.length>0 ? displayedSchemes.map((scheme, index) => (
                  <Card style={{ width: '18rem' }} className="mt-3 mr-5 bg-black text-light " key={index}>
                  <Card.Img variant="top" src={SchemesDo} />
                  <Card.Body>
-                     <Card.Title >{scheme.scheme_sector}</Card.Title>
+                     <Card.Title >scheme sector : {scheme.scheme_sector}</Card.Title>
                      <Card.Text>
                      {scheme.about_scheme}
-                     <p>Income less than {scheme.min_income}</p>
-                     <p>Age more than {scheme.min_age}</p>
-                     <p>for caste {scheme.caste}</p>
+                     <p>for caste {scheme.caste.toUpperCase()}</p>
                      </Card.Text>
                      <Button variant="primary" className="mt-3" onClick={()=>alert("ruko jara sabar rakho, website develop ho rahi")}>Go somewhere</Button>
                  </Card.Body>
@@ -88,15 +85,17 @@ const FilteredSchemesSectors=({formcount,selectedGender,state,area,selectedIncom
                 // </li>
                 // </div>
               )):<h2>no schemes for ya</h2>}
-            </div>:sectors.map((sector,id)=>{
-              return(
-                    <div className="sector" key={id} onClick={()=>handleClick(sector)}>
-                      <img className="sectorimg" src="https://png.pngtree.com/element_our/20200702/ourlarge/pngtree-agriculture-icon-pictures-image_2289925.jpg" alt='sector'/>
+              </div> : sectors.length > 0 ? (
+                  sectors.map((sector, id) => (
+                    <div className="sector" key={id} onClick={() => handleClick(sector)}>
+                      <img className="sectorimg" src="https://png.pngtree.com/element_our/20200702/ourlarge/pngtree-agriculture-icon-pictures-image_2289925.jpg" alt="sector" />
                       <h3>{sector.sector_name}</h3>
                     </div>
-                )
-            })}
-        </div>
+                  ))
+                ) : (
+                  <h1>no schemes for ya..our team members are finding schemes</h1>
+                )}
+              </div>
     )
 }
 
