@@ -71,12 +71,11 @@ const FilteredSchemesSectors=({formcount,selectedGender,state,area,selectedIncom
                  <Card style={{ width: '18rem' }} className="mt-3 mr-5 bg-black text-light " key={index}>
                  <Card.Img variant="top" src={SchemesDo} />
                  <Card.Body>
-                     <Card.Title >scheme sector : {scheme.scheme_sector}</Card.Title>
+                     <Card.Title >{scheme.scheme_name}</Card.Title>
                      <Card.Text>
                      {scheme.about_scheme}
-                     <p>for caste {scheme.caste.toUpperCase()}</p>
                      </Card.Text>
-                     <Button variant="primary" className="mt-3" onClick={()=>alert("ruko jara sabar rakho, website develop ho rahi")}>Go somewhere</Button>
+                     <Button variant="primary" className="mt-3" onClick={()=>window.open(scheme.scheme_url)}>Go somewhere</Button>
                  </Card.Body>
                  </Card>
                 // <div className="sector">
