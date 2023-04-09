@@ -1,27 +1,46 @@
 import Form from 'react-bootstrap/Form';
 import './schemes.css';
-import React,{useState,useEffect} from "react"
+import React,{useState,useEffect,useRef, useCallback } from "react"
 import schemes from "./schemes"
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import SchemesDo from "../schemesdo.jfif"
 
-const FilteredSchemesSectors=({formcount})=>{
-    const [selectedSector,setSelectedSector]=useState()
-    const [filteredSchemes, setFilteredSchemes] = useState([]);
+const FilteredSchemesSectors=({formcount,selectedGender,state,area,selectedIncome,caste,isStudent,isDissabled})=>{
+    const [selectedSector,setSelectedSector]=useState();
+  const [filteredSchemes, setFilteredSchemes] = useState([]);
+  const [displayedSchemes, setDisplayedSchemes] = useState([]);
+  const [availableSectors, setAvailableSectors] = useState([]);
 
-    const handleClick=(sector)=>{
-      setSelectedSector(sector.sector)
-      formcount++;
-      // const filteredSchemes = schemes.filter((scheme) => scheme.scheme_sector === `${selectedSector}`);
-      // setFilteredSchemes(filteredSchemes)
-    }
+  const isMountedRef = useRef(false);
 
-    useEffect(() => {
-      const filtered = schemes.filter((scheme) => scheme.scheme_sector === selectedSector);
-      setFilteredSchemes(filtered);
+  const handleClick=(sector)=>{
+    setSelectedSector(sector.sector);
+    formcount++;
+  }
 
-    },[selectedSector]);
+  const filterSchemes = useCallback(() =>{
+    const filteredCaste = schemes.filter((scheme) => scheme.caste === caste);
+    setFilteredSchemes(filteredCaste);
+    const sectors = filteredCaste.reduce((acc, cur) => {
+      if (!acc.includes(cur.scheme_sector)) {
+        acc.push(cur.scheme_sector);
+      }
+      return acc;
+    }, []);
+    setAvailableSectors(sectors);
+    // console.log(filteredSchemes,"filteredSchemes")
+  },[schemes, caste]);
+
+  useEffect(() => {
+    filterSchemes();
+  }, [filterSchemes]);
+
+  useEffect(() => {
+    const filteredSectors = filteredSchemes.filter((scheme) => scheme.scheme_sector === selectedSector);
+    setDisplayedSchemes(filteredSectors);
+    // console.log(filteredSchemes,"filteredSectors")
+  }, [filteredSchemes, selectedSector]);
 
     const sectors=[
       {
@@ -44,7 +63,7 @@ const FilteredSchemesSectors=({formcount})=>{
         sector_name:"Health & Wellness",
         sector:"health",
       },
-]
+].filter((sector) => availableSectors.includes(sector.sector));
     return(
         <div className='container'>
         {selectedSector?

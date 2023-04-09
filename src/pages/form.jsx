@@ -55,17 +55,17 @@ const FormPage=()=>{
                    required as="select" type="select"
                   >
                   <option value="0">Select Gender</option>
-                  <option value="1">Male</option>
-                  <option value="2">Female</option>
-                  <option value="3">Other</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
                   </Form.Select>
         
                   <p>Please select your age</p>
                   <Form.Select aria-label="select caste" value={selectedAge} onChange={handleAgeChange}>
                   <option value="0">Select age</option>
-                  <option value="1">18-40</option>
-                  <option value="2">40-60</option>
-                  <option value="3">more than 60</option>
+                  <option value="18">18-40</option>
+                  <option value="40">40-60</option>
+                  <option value="60">more than 60</option>
                   </Form.Select>
                 <br/><br/>
                 <div>
@@ -81,16 +81,16 @@ const FormPage=()=>{
                   onChange={(e)=>setState(e.target.value)} 
                   >
                   <option value="0">Select Your state</option>
-                  <option value="1">Gujarat</option>
-                  <option value="2">Maharashtra</option>
-                  <option value="3">Rajasthan</option>
+                  <option value="gujarat">Gujarat</option>
+                  <option value="maharashtra">Maharashtra</option>
+                  <option value="rajasthan">Rajasthan</option>
                   </Form.Select>
         
                   <p>Please select your area of residence</p>
                   <Form.Select aria-label="select caste" value={area} onChange={(e)=>setArea(e.target.value)}>
                   <option value="0">Select your area of residence</option>
-                  <option value="1">Rural</option>
-                  <option value="2">Urban</option>
+                  <option value="rural">Rural</option>
+                  <option value="urban">Urban</option>
                   {/* <option value="3">more than 60</option> */}
                   </Form.Select>
                 <br/><br/>
@@ -109,19 +109,19 @@ const FormPage=()=>{
                   onChange={(e)=>setCaste(e.target.value)} 
                   >
                   <option value="0">Select your caste</option>
-                  <option value="1">General</option>
-                  <option value="2">Other Backward Class (OBC)</option>
-                  <option value="3">Particularly Vulnerable Tribal Group (PVTG)</option>
-                  <option value="4">Scheduled Caste (SC)</option>
-                  <option value="5">Scheduled Tribe (ST)</option>         
+                  <option value="general">General</option>
+                  <option value="obc">Other Backward Class (OBC)</option>
+                  <option value="pvtg">Particularly Vulnerable Tribal Group (PVTG)</option>
+                  <option value="sc">Scheduled Caste (SC)</option>
+                  <option value="st">Scheduled Tribe (ST)</option>         
                   </Form.Select>
         
                   <p>Please select your yearly income</p>
                   <Form.Select aria-label="select caste" value={selectedIncome} onChange={(e)=>setSelectedIncome(e.target.value)}>
                   <option value="0">Select your income</option>
-                  <option value="1">upto 50000</option>
-                  <option value="2">upto 100000</option>
-                  <option value="3">more than 100000</option> 
+                  <option value="50000">upto 50000</option>
+                  <option value="100000">upto 100000</option>
+                  <option value="110000">more than 100000</option> 
                   </Form.Select>
                 <br/><br/>
                 <div>
@@ -139,16 +139,16 @@ const FormPage=()=>{
                   onChange={(e)=>setIsStudent(e.target.value)} 
                   >
                   <option value="0">Select</option>
-                  <option value="1">Yes</option>
-                  <option value="2">NO</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">NO</option>
                        
                   </Form.Select>
         
                   <p>Are you dissabled</p>
                   <Form.Select aria-label="select caste" value={isDissabled} onChange={(e)=>setIsDissabled(e.target.value)}>
                   <option value="0">Select</option>
-                  <option value="1">Yes</option>
-                  <option value="2">No</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
                   {/* <option value="3">more than 60</option> */}
                   </Form.Select>
                 <br/><br/>
@@ -162,7 +162,15 @@ const FormPage=()=>{
         
               
               </div>:null}
-      {formcount===4? <FilteredSchemesSectors formcount={setFormcount}/>: null}
+      {formcount===4? <FilteredSchemesSectors 
+                    formcount={setFormcount} 
+                    selectedGender = {selectedGender}
+                    state={state}
+                    area={area}
+                    selectedIncome={selectedIncome}
+                    caste={caste}
+                    isStudent={isStudent}
+                    isDissabled={isDissabled}/> : null}
       </div>
     )
 }
