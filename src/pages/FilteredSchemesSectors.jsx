@@ -4,7 +4,7 @@ import React,{useState,useEffect,useRef, useCallback } from "react"
 import schemes from "./schemes"
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import SchemesDo from "../schemesdo.jfif"
+import SchemesDo from "../scheme1.jfif"
 
 const FilteredSchemesSectors=({formcount,selectedGender,state,area,selectedIncome,caste,isStudent,isDissabled})=>{
   const [selectedSector,setSelectedSector]=useState();
