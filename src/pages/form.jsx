@@ -4,8 +4,8 @@ import './form.css';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SchemesDo from "../schemesdo.jfif"
-import FilteredSchemesSectors from "./FilteredSchemesSectors"
+import SchemesDo from "../schemesdo.jfif";
+import FilteredSchemesSectors from "./FilteredSchemesSectors";
 
 const FormPage=()=>{
     const [formcount,setFormcount]=useState(0);
