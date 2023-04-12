@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/SchemeSavant/static/css/main.f46ddff7.css",
-    "main.js": "/SchemeSavant/static/js/main.05ef4d6f.js",
+    "main.js": "/SchemeSavant/static/js/main.21297e1e.js",
     "static/js/787.276dece6.chunk.js": "/SchemeSavant/static/js/787.276dece6.chunk.js",
     "static/media/scheme1.jfif": "/SchemeSavant/static/media/scheme1.3fcf65fe6aaa0688c469.jfif",
     "static/media/schemesdo.jfif": "/SchemeSavant/static/media/schemesdo.8762aeb35642a03ffc5e.jfif",
     "index.html": "/SchemeSavant/index.html",
     "main.f46ddff7.css.map": "/SchemeSavant/static/css/main.f46ddff7.css.map",
-    "main.05ef4d6f.js.map": "/SchemeSavant/static/js/main.05ef4d6f.js.map",
+    "main.21297e1e.js.map": "/SchemeSavant/static/js/main.21297e1e.js.map",
     "787.276dece6.chunk.js.map": "/SchemeSavant/static/js/787.276dece6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f46ddff7.css",
-    "static/js/main.05ef4d6f.js"
+    "static/js/main.21297e1e.js"
   ]
 }
