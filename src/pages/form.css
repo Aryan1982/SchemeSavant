@@ -1,7 +1,7 @@
 
 .form{
 	padding: 40px;
-	background-color: #C0EEF2;
+	background-color: #9DC08B;
 	border-radius: 20px;
 	box-shadow: 0 15px 30px 5px rgb(0, 0, 0, 0.3);
 }
@@ -35,7 +35,7 @@ form{
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #E9F8F9;
+	background-color: #EDF1D6;
 }
 button{
 	background-color: #212121;
@@ -44,6 +44,14 @@ button{
 	font-family: Poppins;
 }
 
+.btns{
+	transition:0.2s;
+	border-radius: 5px;
+}
+.btns:hover{
+	scale: 1.1;
+	transition: 0.20s;
+}
 .submitbtn{
 	margin-top: 10px;
 	background-color: lightblue;

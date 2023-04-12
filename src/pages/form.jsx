@@ -42,7 +42,7 @@ const FormPage=()=>{
         <ToastContainer/>
           {formcount<4?<ProgressBar animated now={formcount*25}  style={{width:"200px",textAlign:"center"}}/>:null}
           {formcount<4?<p>help us find best schemes for you</p>:null}
-          {formcount>=4?<button className="mb-2" onClick={()=>setFormcount(formcount-1)}>BACK</button>:null}
+          {formcount>=4?<button className="mb-2 btns" onClick={()=>setFormcount(formcount-1)}>BACK</button>:null}
         {formcount<4?<div className="form">
                   
                 {/* <h1 style={{textAlign:'center', marginTop:"0px", marginBottom:"30px"}}>LOGIN</h1> */}
@@ -154,8 +154,8 @@ const FormPage=()=>{
                 <br/><br/>
                 <div>
                 {/* <input className="submitbtn" type="submit" value="Login"/><br/><br/> */}
-                <button onClick={()=>setFormcount(formcount-1)}>BACK</button>
-                <button onClick={(e)=>{e.preventDefault();if(isStudent !=="0" && isDissabled !=="0"){Goforward(e)}else{toast("Please fill all the fields")}}}>SUBMIT</button>
+                <button className="btns" onClick={()=>setFormcount(formcount-1)} style={{borderRadius: "5px"}}>BACK</button>
+                <button className="btns" onClick={(e)=>{e.preventDefault();if(isStudent !=="0" && isDissabled !=="0"){Goforward(e)}else{toast("Please fill all the fields")}}} style={{marginLeft:"9px", borderRadius:"5px"}}>SUBMIT</button>
                 </div>
                 
               </form>:null}

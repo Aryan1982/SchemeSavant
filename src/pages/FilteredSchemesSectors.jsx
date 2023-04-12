@@ -69,7 +69,7 @@ const FilteredSchemesSectors=({formcount,selectedGender,state,area,selectedIncom
             <div className="sectordiv">
               {availableSectors.length>0 ? displayedSchemes.map((scheme, index) => (
                  <Card style={{ width: '18rem' }} className="mt-3 mr-5 bg-black text-light " key={index}>
-                 <Card.Img variant="top" src={SchemesDo} />
+                 <Card.Img variant="top" src={scheme.scheme_img_url} />
                  <Card.Body>
                      <Card.Title >{scheme.scheme_name}</Card.Title>
                      <Card.Text>
