@@ -43,17 +43,6 @@ const schemes=[
         scheme_img_url : "https://pmmodiyojana.in/wp-content/uploads/2022/10/image-197.png"
     },
     {
-        scheme_name:"Janta Juth Accidental Insurance Scheme",
-        about_scheme:"Janta Juth is a Farmers Accidental Insurance Scheme launched by the Govt. of Gujarat on 26th January 1996 to provide economic assistance of upto ₹ 2,00,000 to Farmers in case of Death or Disability. It is a 100% state-sponsored scheme. The main objective is to assist the successor of the farmer in case of death or disability due to an accident. In this scheme, insurance premium is paid by the State Government for all farmers. This scheme is implemented under the Gujarat Community Group-Janta Accidental Insurance Scheme from 01/04/08 through Director of Insurance, Gandhinagar. In case of accidental death or permanent disability, all registered farmers, any child (son/daughter) of the farmer and husband/wife of the farmer having age of 5 to 70 years are beneficiaries for the scheme." ,
-        min_age:5, //isme 5-70 saal ke liye eligibility hai
-        min_income: 0 ,//no income criteria
-        caste:"obc",
-        gender:"all",
-        scheme_sector:"agriculture",
-        scheme_url:"offline form",
-        scheme_img_url :"https://www.bookmycrop.com/storage/blog/miAeUmQhEeRMPnJ3vejqFXPNZbkmZq2Jpnvzpn8Z.jpg"
-    },
-    {
         scheme_name:"Deen Dayal Upadhyay Grameen Kaushalya Yojana",
         about_scheme:"Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY), the skill training and placement program of the Ministry of Rural Development (MoRD), occupies a unique position amongst other skill training programs, due to its focus on the rural poor youth and its emphasis on sustainable employment through the prominenceand incentives are given to post-placement tracking, retention, and career progression",
         min_age:15, // 15 to 35 ki age limit hai to apne aap se dekh liyo ki kese ho salta hai
